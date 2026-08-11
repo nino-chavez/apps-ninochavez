@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apps — Nino Chavez</title>
+<meta name="description" content="Local-first apps built for my own work, then made available. They run on your machine, keep your files where they are, and leave the decisions to you.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --paper:#F0F1F4; --ink:#14202E; --deep:#0E1928; --muted:#5A6472;
+    --accent:#14679E; --surface:#F7F8FA; --rule:#D6D9E0;
+    --display:"Arial Narrow", Arial, sans-serif;
+    --body:Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+       font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .shell{max-width:1080px;margin:0 auto;padding:0 28px}
+  a{color:var(--accent)}
+  header{border-bottom:1px solid var(--rule);background:var(--surface)}
+  .bar{display:flex;align-items:baseline;gap:14px;padding:18px 0}
+  .bar .name{font-weight:700;letter-spacing:-.01em}
+  .bar .sep{color:var(--muted)}
+  .bar .here{color:var(--muted)}
+  .bar nav{margin-left:auto;display:flex;gap:20px;font-size:15px}
+  .bar nav a{color:var(--ink);text-decoration:none}
+  .bar nav a:hover{color:var(--accent)}
+
+  .hero{padding:76px 0 56px;border-bottom:1px solid var(--rule)}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,7.5vw,84px);
+     line-height:.98;letter-spacing:-.01em;margin:0 0 26px;color:var(--deep)}
+  .lead{font-size:20px;max-width:60ch;margin:0 0 16px}
+  .lead-sub{font-size:17px;color:var(--muted);max-width:62ch;margin:0}
+
+  .apps{padding:56px 0 24px;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .card{background:var(--surface);border:1px solid var(--rule);padding:28px;display:flex;flex-direction:column}
+  .card h2{font-size:26px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em}
+  .card .for{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+  .card .what{margin:0 0 18px}
+  .card ul{margin:0 0 22px;padding-left:18px;color:var(--muted);font-size:15.5px}
+  .card li{margin-bottom:5px}
+  .card .foot{margin-top:auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;
+       padding:11px 20px;font-size:15px;font-weight:600;border-radius:2px}
+  .btn:hover{background:var(--accent)}
+  .btn[aria-disabled="true"]{background:transparent;color:var(--muted);
+       border:1px solid var(--rule);cursor:default;font-weight:500}
+  .meta{font-size:14px;color:var(--muted)}
+
+  .why{padding:8px 0 72px;border-top:1px solid var(--rule);margin-top:32px}
+  .why h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+          font-weight:600;margin:36px 0 18px}
+  .why-grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .why-grid p{margin:0;font-size:16px}
+  .why-grid strong{display:block;margin-bottom:5px}
+
+  footer{border-top:1px solid var(--rule);background:var(--surface);padding:26px 0 40px;
+         font-size:14.5px;color:var(--muted)}
+  footer a{color:var(--muted)}
+  @media (max-width:640px){ .hero{padding:52px 0 40px} .apps{padding-top:40px} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shell bar">
+    <span class="name">Nino Chavez</span>
+    <span class="sep">/</span>
+    <span class="here">Apps</span>
+    <nav>
+      <a href="https://ninochavez.co">Main site</a>
+      <a href="https://demos.ninochavez.co">Demos</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero shell">
+    <p class="eyebrow">Local-first software</p>
+    <h1>Built for my own work.<br>Then made available.</h1>
+    <p class="lead">
+      Each of these started because a job I do regularly had no tool that owned it,
+      and the workarounds were costing hours. They are small, they do one thing,
+      and they stop where judgment starts.
+    </p>
+    <p class="lead-sub">
+      They run on your machine. Your files stay where they are, nothing uploads on
+      its own, and no account is required to use them.
+    </p>
+  </section>
+
+  <section class="apps shell" aria-label="Available apps">
+
+    <article class="card">
+      <h2>Cutting Board</h2>
+      <p class="for">For video creators shooting events</p>
+      <p class="what">
+        The prep station between your camera and your editor. It turns a camera card
+        into an ordered review queue — screen, sort, trim, and label the day's video
+        before any of it reaches a timeline.
+      </p>
+      <ul>
+        <li>Reads a card or folder; source files are never modified</li>
+        <li>Proposes a starting order; you make every Keep, Highlight, and Reject call</li>
+        <li>Hands your choices to Premiere, Resolve, or Final Cut</li>
+      </ul>
+      <div class="foot">
+        <a class="btn" href="/cutting-board/">Download for macOS</a>
+        <span class="meta">Apple silicon · signed &amp; notarized · AGPL-3.0</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Yawn</h2>
+      <p class="for">For anyone who sits through meetings</p>
+      <p class="what">
+        A private meeting notepad for your Mac. It records a consented meeting,
+        gives you somewhere to write what matters while it happens, and keeps the
+        transcript beside your notes for when you need to check a detail.
+      </p>
+      <ul>
+        <li>Stored on this Mac — no account, no meeting bot, no automatic sharing</li>
+        <li>Your notes stay yours, saved separately from the transcript rather than presented as generated claims</li>
+        <li>It does not join calls, read your calendar, or turn a conversation into tasks</li>
+      </ul>
+      <div class="foot">
+        <a class="btn" href="/yawn/">Download Yawn</a>
+        <span class="meta">0.4.0 · Apple silicon · macOS</span>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="why shell">
+    <h2>What these have in common</h2>
+    <div class="why-grid">
+      <p><strong>Local by default.</strong>
+        The work happens on your machine. Nothing is uploaded, published, or shared
+        unless you do it deliberately.</p>
+      <p><strong>They point; you decide.</strong>
+        Analysis narrows what deserves your attention. It does not decide what is
+        good, and it does not act on your behalf.</p>
+      <p><strong>Built from real use.</strong>
+        Each one exists because I hit the problem repeatedly in my own work, not
+        because the category looked interesting.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell">
+    <p>Apps by <a href="https://ninochavez.co">Nino Chavez</a>. Developer tools and
+       open-source utilities live on the <a href="https://ninochavez.co">main site</a>.</p>
+    <p>These pages are unlisted rather than confidential. Share them with whoever you like.</p>
+  </div>
+</footer>
+
+</body>
+</html>
