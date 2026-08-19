@@ -112,22 +112,18 @@
       </div>
     </article>
 
-    <article class="card">
+    <article class="card" data-yawn-card>
       <h2>Yawn</h2>
-      <p class="for">For anyone who sits through meetings</p>
-      <p class="what">
-        A private meeting notepad for your Mac. It records a consented meeting,
-        gives you somewhere to write what matters while it happens, and keeps the
-        transcript beside your notes for when you need to check a detail.
-      </p>
-      <ul>
-        <li>Stored on this Mac — no account, no meeting bot, no automatic sharing</li>
-        <li>Your notes stay yours, saved separately from the transcript rather than presented as generated claims</li>
-        <li>It does not join calls, read your calendar, or turn a conversation into tasks</li>
+      <p class="for" data-yawn-audience>For anyone who sits through meetings</p>
+      <p class="what" data-yawn-summary>A private meeting notepad for your Mac.</p>
+      <ul data-yawn-highlights>
+        <li>Stored on this Mac</li>
+        <li>No account or meeting bot</li>
+        <li>Your notes stay separate from the transcript</li>
       </ul>
       <div class="foot">
-        <a class="btn" href="/yawn/">Download Yawn</a>
-        <span class="meta">0.4.0 · Apple silicon · macOS</span>
+        <a class="btn" href="/yawn/">View Yawn</a>
+        <span class="meta" data-yawn-meta>Internal alpha · Apple silicon · macOS</span>
       </div>
     </article>
 
@@ -156,6 +152,51 @@
     <p>These pages are unlisted rather than confidential. Share them with whoever you like.</p>
   </div>
 </footer>
+
+<script>
+  const yawnCard = document.querySelector('[data-yawn-card]');
+
+  function isYawnCard(value) {
+    const isText = (item, limit) => typeof item === 'string' && item.length > 0 && item.length <= limit;
+    return value
+      && value.schema === 'yawn-app-card/1'
+      && isText(value.audience, 120)
+      && isText(value.summary, 500)
+      && isText(value.status, 80)
+      && /^\d+\.\d+\.\d+$/.test(value.version)
+      && isText(value.platform, 160)
+      && Array.isArray(value.highlights)
+      && value.highlights.length > 0
+      && value.highlights.length <= 4
+      && value.highlights.every((item) => isText(item, 240));
+  }
+
+  async function syncYawnCard() {
+    if (!yawnCard) return;
+    const response = await fetch('https://yawn-site.pages.dev/app-card.json', {
+      cache: 'no-store',
+      credentials: 'omit',
+      headers: { Accept: 'application/json' },
+    });
+    if (!response.ok) throw new Error('Yawn card manifest is unavailable');
+    const card = await response.json();
+    if (!isYawnCard(card)) throw new Error('Yawn card manifest is invalid');
+
+    yawnCard.querySelector('[data-yawn-audience]').textContent = card.audience;
+    yawnCard.querySelector('[data-yawn-summary]').textContent = card.summary;
+    yawnCard.querySelector('[data-yawn-meta]').textContent = `${card.status} · ${card.version} · ${card.platform}`;
+    const highlights = yawnCard.querySelector('[data-yawn-highlights]');
+    highlights.replaceChildren(...card.highlights.map((highlight) => {
+      const item = document.createElement('li');
+      item.textContent = highlight;
+      return item;
+    }));
+  }
+
+  syncYawnCard().catch(() => {
+    // The static card remains deliberately generic when the public manifest is unavailable.
+  });
+</script>
 
 </body>
 </html>
