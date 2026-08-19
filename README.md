@@ -17,6 +17,9 @@ assets/readme/          the hero above
 ```
 
 One file, no build step, no dependencies. Open `index.html` to work on it.
+The Yawn card is the exception: its public product copy and release metadata
+load from Yawn's published `app-card.json` manifest. Keep the local fallback
+generic and accurate; do not add a second hard-coded Yawn version here.
 
 ## Deploy
 
