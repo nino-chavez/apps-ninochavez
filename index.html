@@ -31,8 +31,8 @@
   .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
   h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,7.5vw,84px);
      line-height:.98;letter-spacing:-.01em;margin:0 0 26px;color:var(--deep)}
-  .lead{font-size:20px;max-width:60ch;margin:0 0 16px}
-  .lead-sub{font-size:17px;color:var(--muted);max-width:62ch;margin:0}
+  .lead{font-size:20px;max-width:70ch;margin:0 0 16px}
+  .lead-sub{font-size:17px;color:var(--muted);max-width:72ch;margin:0}
 
   .apps{padding:56px 0 24px;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
   .card{background:var(--surface);border:1px solid var(--rule);padding:28px;display:flex;flex-direction:column}
@@ -52,6 +52,9 @@
   .btn[aria-disabled="true"]{background:transparent;color:var(--muted);
        border:1px solid var(--rule);cursor:default;font-weight:500}
   .meta{font-size:14px;color:var(--muted)}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;
+         text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);
+         padding:2px 7px;border-radius:2px;margin-right:8px;vertical-align:1px}
 
   .why{padding:8px 0 72px;border-top:1px solid var(--rule);margin-top:32px}
   .why h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
@@ -134,8 +137,8 @@
         <li>Your notes stay separate from the transcript</li>
       </ul>
       <div class="foot">
-        <a class="btn btn--secondary" href="/yawn/">View Yawn</a>
-        <span class="meta" data-yawn-meta>Internal alpha · Apple silicon · macOS</span>
+        <a class="btn btn--secondary" href="/yawn/">See Yawn's page</a>
+        <span class="meta"><span class="badge" data-yawn-status>Internal alpha</span><span data-yawn-meta-rest>Apple silicon · macOS</span></span>
       </div>
     </article>
 
@@ -196,7 +199,8 @@
 
     yawnCard.querySelector('[data-yawn-audience]').textContent = card.audience;
     yawnCard.querySelector('[data-yawn-summary]').textContent = card.summary;
-    yawnCard.querySelector('[data-yawn-meta]').textContent = `${card.status} · ${card.version} · ${card.platform}`;
+    yawnCard.querySelector('[data-yawn-status]').textContent = card.status;
+    yawnCard.querySelector('[data-yawn-meta-rest]').textContent = `${card.version} · ${card.platform}`;
     const highlights = yawnCard.querySelector('[data-yawn-highlights]');
     highlights.replaceChildren(...card.highlights.map((highlight) => {
       const item = document.createElement('li');
