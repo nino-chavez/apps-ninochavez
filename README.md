@@ -23,12 +23,17 @@ generic and accurate; do not add a second hard-coded Yawn version here.
 
 ## Deploy
 
-```bash
-npx wrangler pages deploy . --project-name=apps-ninochavez --branch=main
-```
+Push to `main`. The Cloudflare Pages project `apps-ninochavez-git` is connected to
+this repo and publishes the repo root on every push (no build step). Pull requests
+get preview deployments.
 
-The custom domain is served by the router Worker, not by this project directly —
-so a deploy here changes the index and nothing else.
+The custom domain is served by the router Worker (`platform/apps-ninochavez-router`),
+not by this project directly. The router fetches everything except the app routes
+from `apps-ninochavez-git.pages.dev`, so a push here changes the index and nothing
+else.
+
+The old direct-upload project `apps-ninochavez` is no longer used. It is kept only
+as a rollback target.
 
 ## Adding an app
 
