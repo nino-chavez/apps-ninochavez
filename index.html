@@ -36,6 +36,8 @@
 
   .apps{padding:56px 0 24px;display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
   .card{background:var(--surface);border:1px solid var(--rule);padding:28px;display:flex;flex-direction:column}
+  .card .shot{margin:-28px -28px 20px;border-bottom:1px solid var(--rule);background:var(--ink);overflow:hidden}
+  .card .shot img{display:block;width:100%;height:180px;object-fit:cover}
   .card h2{font-size:26px;font-weight:700;margin:0 0 4px;letter-spacing:-.01em}
   .card .for{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
   .card .what{margin:0 0 18px}
@@ -43,8 +45,10 @@
   .card li{margin-bottom:5px}
   .card .foot{margin-top:auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
   .btn{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;
-       padding:11px 20px;font-size:15px;font-weight:600;border-radius:2px}
-  .btn:hover{background:var(--accent)}
+       padding:11px 20px;font-size:15px;font-weight:600;border-radius:2px;border:1px solid var(--ink)}
+  .btn:hover{background:var(--accent);border-color:var(--accent)}
+  .btn--secondary{background:transparent;color:var(--ink)}
+  .btn--secondary:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .btn[aria-disabled="true"]{background:transparent;color:var(--muted);
        border:1px solid var(--rule);cursor:default;font-weight:500}
   .meta{font-size:14px;color:var(--muted)}
@@ -94,6 +98,10 @@
   <section class="apps shell" aria-label="Available apps">
 
     <article class="card">
+      <div class="shot">
+        <img src="assets/screenshots/cutting-board.jpg" width="960" height="600" loading="lazy"
+             alt="Cutting Board's review screen: a grid of clips with Keep, Highlight, and Reject actions under each one.">
+      </div>
       <h2>Cutting Board</h2>
       <p class="for">For video creators shooting events</p>
       <p class="what">
@@ -113,6 +121,10 @@
     </article>
 
     <article class="card" data-yawn-card>
+      <div class="shot">
+        <img src="assets/screenshots/yawn.jpg" width="960" height="815" loading="lazy"
+             alt="Yawn's meeting view on macOS: notes panel beside the recording controls and full transcript.">
+      </div>
       <h2>Yawn</h2>
       <p class="for" data-yawn-audience>For anyone who sits through meetings</p>
       <p class="what" data-yawn-summary>A private meeting notepad for your Mac.</p>
@@ -122,7 +134,7 @@
         <li>Your notes stay separate from the transcript</li>
       </ul>
       <div class="foot">
-        <a class="btn" href="/yawn/">View Yawn</a>
+        <a class="btn btn--secondary" href="/yawn/">View Yawn</a>
         <span class="meta" data-yawn-meta>Internal alpha · Apple silicon · macOS</span>
       </div>
     </article>
