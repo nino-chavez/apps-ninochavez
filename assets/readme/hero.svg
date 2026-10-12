@@ -5,13 +5,13 @@
     <style>
       .p  { font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif; }
       .m  { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
-      .ink{ fill:#14202E } .mut{ fill:#5A6472 } .acc{ fill:#14679E } .pap{ fill:#F0F1F4 }
+      .ink{ fill:#122a3c } .mut{ fill:#536373 } .acc{ fill:#0d5a93 } .pap{ fill:#f4f0e8 }
     </style>
   </defs>
 
-  <rect width="1200" height="460" fill="#F0F1F4"/>
-  <rect x="0" y="0" width="1200" height="52" fill="#F7F8FA"/>
-  <rect x="0" y="51" width="1200" height="1" fill="#D6D9E0"/>
+  <rect width="1200" height="460" fill="#f4f0e8"/>
+  <rect x="0" y="0" width="1200" height="52" fill="#faf7f1"/>
+  <rect x="0" y="51" width="1200" height="1" fill="#bbc0bf"/>
 
   <!-- site chrome, exactly as the page renders it -->
   <text class="p ink" x="48" y="33" font-size="16" font-weight="700">Nino Chavez</text>
@@ -29,22 +29,22 @@
 
   <!-- the real proof: the two cards the index actually serves -->
   <g>
-    <rect x="48" y="318" width="536" height="112" fill="#F7F8FA" stroke="#D6D9E0"/>
+    <rect x="48" y="318" width="536" height="112" fill="#faf7f1" stroke="#bbc0bf"/>
     <text class="p ink" x="72" y="352" font-size="20" font-weight="700">Cutting Board</text>
     <text class="p mut" x="72" y="374" font-size="11" letter-spacing="1.4">FOR VIDEO CREATORS SHOOTING EVENTS</text>
-    <rect x="72" y="392" width="150" height="26" fill="#14202E"/>
+    <rect x="72" y="392" width="150" height="26" fill="#122a3c"/>
     <text class="p pap" x="147" y="409" font-size="12" font-weight="600" text-anchor="middle">Download for macOS</text>
     <text class="m mut" x="236" y="409" font-size="11">/cutting-board</text>
   </g>
 
   <g>
-    <rect x="616" y="318" width="536" height="112" fill="#F7F8FA" stroke="#D6D9E0"/>
+    <rect x="616" y="318" width="536" height="112" fill="#faf7f1" stroke="#bbc0bf"/>
     <text class="p ink" x="640" y="352" font-size="20" font-weight="700">Yawn</text>
     <text class="p mut" x="640" y="374" font-size="11" letter-spacing="1.4">FOR ANYONE WHO SITS THROUGH MEETINGS</text>
-    <rect x="640" y="392" width="118" height="26" fill="#14202E"/>
+    <rect x="640" y="392" width="118" height="26" fill="#122a3c"/>
     <text class="p pap" x="699" y="409" font-size="12" font-weight="600" text-anchor="middle">Download Yawn</text>
     <text class="m mut" x="772" y="409" font-size="11">/yawn</text>
   </g>
 
-  <rect x="48" y="300" width="44" height="3" class="acc" fill="#14679E"/>
+  <rect x="48" y="300" width="44" height="3" class="acc" fill="#0d5a93"/>
 </svg>
