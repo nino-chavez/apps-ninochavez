@@ -7,6 +7,10 @@
 <meta name="description" content="Local-first apps built for my own work, then made available. They run on your machine, keep your files where they are, and leave the decisions to you.">
 <meta name="robots" content="noindex, nofollow">
 <style>
+  /* Self-hosted: the same Inter latin file ninochavez.co serves. Without it,
+     Inter rendered only where the visitor had it installed. */
+  @font-face{font-family:Inter;src:url("assets/fonts/inter-latin.woff2") format("woff2");
+             font-style:normal;font-weight:100 900;font-display:swap}
   :root{
     --paper:#F0F1F4; --ink:#14202E; --deep:#0E1928; --muted:#5A6472;
     --accent:#14679E; --surface:#F7F8FA; --rule:#D6D9E0;
