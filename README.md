@@ -56,12 +56,12 @@ this reads as part of the same site:
 
 | Token | Value |
 |---|---|
-| Ink | `#14202E` |
-| Paper | `#F0F1F4` |
-| Surface | `#F7F8FA` |
-| Muted | `#5A6472` |
-| Accent | `#14679E` |
-| Rule | `#D6D9E0` |
+| Ink | `#122a3c` |
+| Paper | `#f4f0e8` |
+| Surface | `#faf7f1` |
+| Muted | `#536373` |
+| Accent | `#0d5a93` |
+| Rule | `#bbc0bf` |
 
 Near-zero corner radius, narrow display face over Inter, no shadows.
 
