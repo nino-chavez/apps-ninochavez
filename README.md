@@ -51,17 +51,29 @@ is needed for a third or fourth card.
 
 ## Design
 
-The palette and type are harvested from `ninochavez.co` rather than chosen, so
-this reads as part of the same site:
+Nino selected **Harbor & vermilion** for the Apps index on November 2, 2026,
+from the November 1 desktop and mobile comparison. Sea-glass fields repeat in
+the introduction and footer; blue-green actions and small vermilion labels
+identify this index independently of the apps it lists.
 
 | Token | Value |
 |---|---|
-| Ink | `#122a3c` |
-| Paper | `#f4f0e8` |
-| Surface | `#faf7f1` |
-| Muted | `#536373` |
-| Accent | `#0d5a93` |
-| Rule | `#bbc0bf` |
+| Ink | `#172F3E` |
+| Paper | `#F5F0E7` |
+| Surface | `#FFFCF7` |
+| Muted | `#50636A` |
+| Action / link | `#1F6373` |
+| Action hover | `#174A57` |
+| On action | `#FFFFFF` |
+| Field | `#DEEAE8` |
+| Vermilion | `#A63E2F` |
+| Heading | `#123E4B` |
+| Rule | `#ADBEBB` |
+
+The selected comparison also supplies mobile gutters, wrapped navigation,
+a compact introduction and visible keyboard focus. Typography, card order,
+screenshots, destinations and the live Yawn manifest remain as before.
+No animation is added; the page keeps its light appearance in either system theme.
 
 Near-zero corner radius, narrow display face over Inter, no shadows.
 
